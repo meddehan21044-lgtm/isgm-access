@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Accès sécurisé</title>
+<style>
+    body { font-family: Arial; text-align: center; margin-top: 100px; }
+    input { padding: 10px; font-size: 16px; }
+    button { padding: 10px; font-size: 16px; }
+</style>
+</head>
+<body>
+
+<h2>Entrer le code d'accès</h2>
+
+<input type="password" id="code" placeholder="Code d'accès">
+<button onclick="verifier()">Valider</button>
+
+<p id="msg" style="color:red;"></p>
+
+<script>
+function verifier() {
+    const bonCode = "ISGM20252026";
+    const lienGoogleSheet = "https://docs.google.com/spreadsheets/d/15RelMKS2o76YdOdq1Gv9QMhGPsEhntDC/edit?gid=543130271#gid=543130271";
+
+    let code = document.getElementById("code").value;
+
+    if (code === bonCode) {
+        window.location.href = lienGoogleSheet;
+    } else {
+        document.getElementById("msg").textContent = "Code incorrect.";
+    }
+}
+</script>
+
+</body>
+</html>
